@@ -2,8 +2,8 @@ package com.hansol.mylog.web.dto.image;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.hansol.mylog.domain.image.Image;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.image.image;
+import com.hansol.mylog.domain.user.user;
 
 import lombok.Data;
 
@@ -14,8 +14,8 @@ public class ImageReqDto {
 	private String caption;
 	private String tags;
 	
-	public Image toEntity(String postImageUrl, User userEntity) {
-		return Image.builder()
+	public image toEntity(String postImageUrl, user userEntity) {
+		return image.builder()
 				.caption(caption)
 				.postImageUrl(postImageUrl)
 				.user(userEntity)

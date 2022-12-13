@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.hansol.mylog.config.auth.PrincipalDetails;
 import com.hansol.mylog.domain.follow.SubscribeRepository;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 import com.hansol.mylog.domain.user.UserRepository;
 import com.hansol.mylog.web.dto.user.UserProfileRespDto;
 
@@ -31,7 +31,7 @@ public class UserService {
 	private String uploadFolder;
 
 	@Transactional
-	public User 회원사진변경(MultipartFile profileImageFile, PrincipalDetails principalDetails) {
+	public user 회원사진변경(MultipartFile profileImageFile, PrincipalDetails principalDetails) {
 
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid + "_" + profileImageFile.getOriginalFilename();
@@ -45,16 +45,16 @@ public class UserService {
 			e.printStackTrace();
 		}
 
-		User userEntity = userRepository.findById(principalDetails.getUser().getId()).get();
+		user userEntity = userRepository.findById(principalDetails.getUser().getId()).get();
 		userEntity.setProfileImageUrl(imageFileName);
 
 		return userEntity;
 	} // 더티체킹
 
 	@Transactional
-	public User 회원수정(int id, User user) {
+	public user 회원수정(int id, user user) {
 		// username, email 수정 불가
-		User userEntity = userRepository.findById(id).get();
+		com.hansol.mylog.domain.user.user userEntity = userRepository.findById(id).get();
 
 		userEntity.setName(user.getName());
 		userEntity.setBio(user.getBio());
@@ -76,7 +76,7 @@ public class UserService {
 	public UserProfileRespDto 회원프로필(int userId, int principalId) {
 		UserProfileRespDto userProfileRespDto = new UserProfileRespDto();
 
-		User userEntity = userRepository.findById(userId).orElseThrow(() -> {
+		user userEntity = userRepository.findById(userId).orElseThrow(() -> {
 			return new IllegalArgumentException();
 		});
 

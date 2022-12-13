@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hansol.mylog.config.auth.PrincipalDetails;
-import com.hansol.mylog.domain.image.Image;
+import com.hansol.mylog.domain.image.image;
 import com.hansol.mylog.domain.image.ImageRepository;
-import com.hansol.mylog.domain.tag.Tag;
+import com.hansol.mylog.domain.tag.tag;
 import com.hansol.mylog.domain.tag.TagRepository;
 import com.hansol.mylog.utils.TagUtils;
 import com.hansol.mylog.web.dto.image.ImageReqDto;
@@ -30,7 +30,7 @@ public class ImageService {
 	private final TagRepository tagRepository;
 	
 	@Transactional(readOnly = true)
-	public List<Image> 인기사진(int principalId){
+	public List<image> 인기사진(int principalId){
 		return imageRepository.mExplore(principalId);
 	}
 	
@@ -38,12 +38,12 @@ public class ImageService {
 	@Value("${file.path}")
 	private String uploadFolder;
 	
-	public Page<Image> 피드이미지(int principalId, Pageable pageable){
+	public Page<image> 피드이미지(int principalId, Pageable pageable){
 		
 		// 1. principalId 로 내가 팔로우하고 있는 사용자를 찾아야 됨. (한개이거나 컬렉션이거나)
 		// select * from image where userId in (select toUserId from follow where fromUserId = 1);
 		
-		Page<Image> images = imageRepository.mFeed(principalId, pageable);
+		Page<image> images = imageRepository.mFeed(principalId, pageable);
 		
 		// 좋아요 하트 색깔 로직 + 좋아요 카운트 로직
 		images.forEach((image)-> {
@@ -79,11 +79,11 @@ public class ImageService {
 		// 참고 :  Image 엔티티에 Tag는 주인이 아니다. Image 엔티티로 통해서 Tag를 save할 수 없다.
 		
 		// 1. Image 저장
-		Image image = imageReDto.toEntity(imageFileName, principalDetails.getUser());
-		Image imageEntity = imageRepository.save(image);
+		image image = imageReDto.toEntity(imageFileName, principalDetails.getUser());
+		com.hansol.mylog.domain.image.image imageEntity = imageRepository.save(image);
 		
 		// 2. Tag 저장
-		List<Tag> tags = TagUtils.parsingToTagObject(imageReDto.getTags(), imageEntity);
+		List<tag> tags = TagUtils.parsingToTagObject(imageReDto.getTags(), imageEntity);
 		tagRepository.saveAll(tags);
 		
 	}

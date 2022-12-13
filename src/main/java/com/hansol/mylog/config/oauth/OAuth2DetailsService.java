@@ -1,7 +1,7 @@
 package com.hansol.mylog.config.oauth;
 
 import com.hansol.mylog.config.auth.PrincipalDetails;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 import com.hansol.mylog.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,10 +30,10 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService {
         String email = (String) userInfo.get("email");
         String name = (String) userInfo.get("name");
 
-        User userEntity = userRepository.findByUsername(username);
+        user userEntity = userRepository.findByUsername(username);
 
         if(userEntity == null) { // 페이스북 최초 로그인
-            User user = User.builder()
+            user user = com.hansol.mylog.domain.user.user.builder()
                     .username(username)
                     .password(password)
                     .email(email)

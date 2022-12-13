@@ -3,10 +3,10 @@ package com.hansol.mylog.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hansol.mylog.domain.comment.Comment;
+import com.hansol.mylog.domain.comment.comment;
 import com.hansol.mylog.domain.comment.CommentRepository;
-import com.hansol.mylog.domain.image.Image;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.image.image;
+import com.hansol.mylog.domain.user.user;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,14 +18,14 @@ public class CommentService {
 
 	
 	@Transactional
-	public Comment 댓글쓰기(User principal, String content, int imageId) {
+	public comment 댓글쓰기(user principal, String content, int imageId) {
 		
-		Image image = Image.builder()
+		image image = com.hansol.mylog.domain.image.image.builder()
 				.id(imageId)
 				.build();
 				
 		// Save할 때 연관관계가 있으면 오브젝트로 만들어서 id값만 넣어주면 된다.
-		Comment comment = Comment.builder()
+		comment comment = com.hansol.mylog.domain.comment.comment.builder()
 				.content(content)
 				.image(image)
 				.user(principal)
@@ -37,7 +37,7 @@ public class CommentService {
 	@Transactional
 	public void 댓글삭제(int id, int principalId) {
 		
-		Comment commentEntity = commentRepository.findById(id).get();
+		comment commentEntity = commentRepository.findById(id).get();
 		if(commentEntity.getUser().getId() == principalId) {
 			commentRepository.deleteById(id);
 		}else {

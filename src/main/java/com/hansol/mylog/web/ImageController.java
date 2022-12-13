@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hansol.mylog.config.auth.PrincipalDetails;
-import com.hansol.mylog.domain.comment.Comment;
-import com.hansol.mylog.domain.image.Image;
+import com.hansol.mylog.domain.comment.comment;
+import com.hansol.mylog.domain.image.image;
 import com.hansol.mylog.service.CommentService;
 import com.hansol.mylog.service.ImageService;
 import com.hansol.mylog.service.LikesService;
@@ -43,7 +43,7 @@ public class ImageController {
 	public @ResponseBody CMRespDto<?> image(Model model, @AuthenticationPrincipal PrincipalDetails principalDetails, 
 			@PageableDefault(size=3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
 		
-		Page<Image> pages = imageService.피드이미지(principalDetails.getUser().getId(), pageable);
+		Page<image> pages = imageService.피드이미지(principalDetails.getUser().getId(), pageable);
 		return new CMRespDto<>(1, pages); // MessageConverter 발동 = Jackson = 무한참조
 	}
 	
@@ -83,7 +83,7 @@ public class ImageController {
 	
 	@PostMapping("/image/{imageId}/comment")
 	public @ResponseBody CMRespDto<?> save(@PathVariable int imageId, @RequestBody String content, @AuthenticationPrincipal PrincipalDetails principalDetails){   // content, imageId, userId(세션)
-		Comment commentEntity = commentService.댓글쓰기(principalDetails.getUser(), content, imageId);
+		comment commentEntity = commentService.댓글쓰기(principalDetails.getUser(), content, imageId);
 		
 		return new CMRespDto<>(1, commentEntity);
 	}

@@ -13,7 +13,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -35,7 +35,7 @@ import lombok.NoArgsConstructor;
 			)
 		}
 	)
-public class Subscribe {
+public class subscribe {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -43,12 +43,12 @@ public class Subscribe {
 	@JsonIgnoreProperties({"images"})
 	@JoinColumn(name = "fromUserId")
 	@ManyToOne
-	private User fromUser;  // ~~로부터  (1)
+	private user fromUser;  // ~~로부터  (1)
 	
 	@JsonIgnoreProperties({"images"})
 	@JoinColumn(name = "toUserId")
 	@ManyToOne
-	private User toUser; // ~~를  (3)
+	private user toUser; // ~~를  (3)
 	
 	@CreationTimestamp
 	private Timestamp createDate;

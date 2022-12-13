@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 import com.hansol.mylog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class PrincipalDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		System.out.println("로그인 진행중 .......");
-		User userEntity = userRepository.findByUsername(username);
+		user userEntity = userRepository.findByUsername(username);
 		if(userEntity == null) {
 			return null;
 		}else {

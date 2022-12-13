@@ -15,10 +15,8 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.hansol.mylog.domain.comment.Comment;
-import com.hansol.mylog.domain.likes.Likes;
-import com.hansol.mylog.domain.tag.Tag;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.comment.comment;
+import com.hansol.mylog.domain.tag.tag;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -31,7 +29,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class Image {
+public class image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -41,20 +39,20 @@ public class Image {
 	@JsonIgnoreProperties({"images"})
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private User user;
+	private com.hansol.mylog.domain.user.user user;
 	
 	@JsonIgnoreProperties({"image"})
 	@OneToMany(mappedBy = "image")
-	private List<Tag> tags;
+	private List<tag> tags;
 	
 	@JsonIgnoreProperties({"image"})
 	@OneToMany(mappedBy = "image")
-	private List<Likes> likes; // A이미지에 홍길동, 장보고, 임꺽정 좋아요.   (고소영)
+	private List<com.hansol.mylog.domain.likes.likes> likes; // A이미지에 홍길동, 장보고, 임꺽정 좋아요.   (고소영)
 
 	@OrderBy("id DESC")  // 정렬
 	@JsonIgnoreProperties({"image"})
 	@OneToMany(mappedBy = "image")
-	private List<Comment> comments;
+	private List<comment> comments;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

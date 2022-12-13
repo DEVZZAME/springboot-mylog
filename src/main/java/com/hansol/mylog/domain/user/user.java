@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.hansol.mylog.domain.image.Image;
+import com.hansol.mylog.domain.image.image;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class User {
+public class user {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; 
@@ -46,7 +46,7 @@ public class User {
 	private String role; // USER, ADMIN
 	
 	@OneToMany(mappedBy = "user")
-	private List<Image> images;
+	private List<image> images;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

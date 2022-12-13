@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hansol.mylog.config.auth.PrincipalDetails;
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 import com.hansol.mylog.service.SubscribeService;
 import com.hansol.mylog.service.UserService;
 import com.hansol.mylog.web.dto.CMRespDto;
@@ -52,9 +52,9 @@ public class UserController {
 	}
 
 	@PutMapping("/user/{id}")
-	public @ResponseBody CMRespDto<?> profileUpdate(@PathVariable int id, User user,
+	public @ResponseBody CMRespDto<?> profileUpdate(@PathVariable int id, user user,
 			@AuthenticationPrincipal PrincipalDetails principalDetails) {
-		User userEntity = userService.회원수정(id, user);
+		com.hansol.mylog.domain.user.user userEntity = userService.회원수정(id, user);
 		principalDetails.setUser(userEntity);
 		return new CMRespDto<>(1, null);
 	}
@@ -62,7 +62,7 @@ public class UserController {
 	@PutMapping("/user/{id}/profileImageUrl")
 	public @ResponseBody CMRespDto<?> profileImageUrlUpdate(@PathVariable int id, MultipartFile profileImageFile,
 			@AuthenticationPrincipal PrincipalDetails principalDetails) {
-		User userEntity = userService.회원사진변경(profileImageFile, principalDetails);
+		user userEntity = userService.회원사진변경(profileImageFile, principalDetails);
 		principalDetails.setUser(userEntity);
 		return new CMRespDto<>(1, null);
 	}

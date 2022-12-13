@@ -11,8 +11,6 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.hansol.mylog.domain.image.Image;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class Tag {
+public class tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; 
@@ -31,7 +29,7 @@ public class Tag {
 	
 	@ManyToOne
 	@JoinColumn(name="imageId")
-	private Image image;
+	private com.hansol.mylog.domain.image.image image;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

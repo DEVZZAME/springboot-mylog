@@ -1,7 +1,7 @@
 package com.hansol.mylog.web.dto.auth;
 
 
-import com.hansol.mylog.domain.user.User;
+import com.hansol.mylog.domain.user.user;
 
 import lombok.Data;
 
@@ -13,8 +13,8 @@ public class UserJoinReqDto {
 	private String email;
 	private String name;
 	
-	public User toEntity() {
-		return User.builder()
+	public user toEntity() {
+		return user.builder()
 				.username(username)
 				.password(password)
 				.email(email)
