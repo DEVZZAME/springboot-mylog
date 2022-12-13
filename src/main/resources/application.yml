@@ -47,7 +47,7 @@ spring:
             - email
 
 file:
-  path: ///upload
+  path: ///home/ubuntu/upload/
 
 #  /home/ubuntu/upload
 
