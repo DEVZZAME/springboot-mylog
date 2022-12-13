@@ -47,7 +47,7 @@ spring:
             - email
 
 file:
-  path: /home/ubuntu/shop/item
+  path: /home/ubuntu/shop
 
 #  /Users/zzame/Desktop/upload/
 

@@ -84,7 +84,7 @@
 
 				<c:forEach var="image" items="${dto.user.images}">
 
-					<div class="img-box" onclick="test(${dto.user.id});">
+					<div class="img-box">
 						<a href=""> <img src="/upload/${image.postImageUrl}" alt="">
 						</a>
 						<div class="comment">
@@ -137,21 +137,9 @@
 	</div>
 </div>
 
-<div id="test_box" style="width:400px; height: 400px; border: 1px solid black; position: absolute; background-color: #0f75b9; left: 50%; top:50%; transform: translate(-50%, -50%); display: none;";>
-
 </div>
 
 <script src="/js/profile.js"></script>
-<script>
-	const testBox = document.getElementById("test_box");
-	function test(num){
-		if(testBox.style.display == "none"){
-			testBox.style.display = "flex";
-		}else if(testBox.style.display == "flex"){
-			testBox.style.display = "none";
-		}
-		console.log(num);
-	}
-</script>
+
 
 <%@ include file="../layout/footer.jsp"%>
