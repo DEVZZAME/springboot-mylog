@@ -1,0 +1,54 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://springboot-shop-database.cvoavd8q8bt5.ap-northeast-2.rds.amazonaws.com/
+    username:
+    password:
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+      
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+
+  security:
+    user:
+      name: test
+      password: 1234
+
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: 837604814181700
+            clientSecret: dd036c6054247ad7846480b849164799
+            scope:
+            - public_profile
+            - email
+
+file:
+  path: /home/ubuntu/shop/item
+
+#  /Users/zzame/Desktop/upload/
+
+
