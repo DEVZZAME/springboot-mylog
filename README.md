@@ -78,21 +78,37 @@
 # Views
 
 - **회원가입 및 로그인**
-    
-    <p align="center"><img src="[https://github.com/DEVZZAME/photogram/blob/master/login.gif?raw=true](https://github.com/DEVZZAME/photogram/blob/master/login.gif?raw=true)"/></p>
-    
-- **메인 페이지 및 피드**
-    
-    <p align="center"><img src="[https://github.com/DEVZZAME/photogram/blob/master/feed.gif?raw=true](https://github.com/DEVZZAME/photogram/blob/master/feed.gif?raw=true)"/></p>
-    
+
+  <p align="center"><img src="https://github.com/DEVZZAME/photogram/blob/master/login.gif?raw=true"/></p>
+
+
+
+
+
+- **메인 페이지 및 피드** 
+
+  <p align="center"><img src="https://github.com/DEVZZAME/photogram/blob/master/feed.gif?raw=true"/></p>
+
+
+
+
+
 - **마이 페이지**
-    
-    <p align="center"><img src="[https://github.com/DEVZZAME/photogram/blob/master/mypage.gif?raw=true](https://github.com/DEVZZAME/photogram/blob/master/mypage.gif?raw=true)"/></p>
-    
+
+  <p align="center"><img src="https://github.com/DEVZZAME/photogram/blob/master/mypage.gif?raw=true"/></p>
+
+
+
+
+
 - **돋보기 페이지**
-    
-    <p align="center"><img src="[https://github.com/DEVZZAME/photogram/blob/master/seach.gif?raw=true](https://github.com/DEVZZAME/photogram/blob/master/seach.gif?raw=true)"/></p>
-    
+
+  <p align="center"><img src="https://github.com/DEVZZAME/photogram/blob/master/seach.gif?raw=true"/></p>
+
+
+
+
+
 - **검색 페이지**
-    
-    <p align="center"><img src="[https://github.com/DEVZZAME/photogram/blob/master/searching.gif?raw=true](https://github.com/DEVZZAME/photogram/blob/master/searching.gif?raw=true)"/></p>
+
+  <p align="center"><img src="https://github.com/DEVZZAME/photogram/blob/master/searching.gif?raw=true"/></p>
